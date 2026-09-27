@@ -1,13 +1,12 @@
 {
-    "name": "chm_web",
-    "short_name": "chm_web",
+    "name": "BENS Digital Solutions",
+    "short_name": "BENS DS",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A sell car sit web.",
-    "orientation": "portrait-primary",
-    "prefer_related_applications": false,
+    "background_color": "#050F0E",
+    "theme_color": "#050F0E",
+    "description": "BENS Digital Solutions : agence digitale en Algérie.",
+        "prefer_related_applications": false,
     "icons": [
         {
             "src": "icons/Icon-192.png",

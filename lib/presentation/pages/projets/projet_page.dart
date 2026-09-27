@@ -39,10 +39,11 @@ class _ProjetPageState extends ConsumerState<ProjetPage> {
         color: AppColors.bg,
         child: Column(
           children: [
-            Container(
+            ClipRect(child: Container(
               width: double.infinity,
               padding: EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: isMobile ? 60 : 100),
               child: Stack(
+                clipBehavior: Clip.none,
                 children: [
                   Positioned(top: -60, right: -40, child: const GlowBlob(size: 280, color: AppColors.tealGlow)),
                   Column(
@@ -58,7 +59,7 @@ class _ProjetPageState extends ConsumerState<ProjetPage> {
                   ),
                 ],
               ),
-            ),
+            )),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: 32),
               child: Align(
@@ -100,6 +101,7 @@ class _ProjetPageState extends ConsumerState<ProjetPage> {
                           shrinkWrap: true,
                           physics: const NeverScrollableScrollPhysics(),
                           items: state.filteredProjets,
+                          childAspectRatio: 4 / 3,
                           itemBuilder: (context, projet, index) => ScrollReveal(
                             delay: Duration(milliseconds: index * kStaggerStepMs),
                             child: ProjetCard(

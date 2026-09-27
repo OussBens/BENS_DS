@@ -9,6 +9,7 @@ import '../../../data/models/service_model.dart';
 import '../../providers/service_provider.dart';
 import '../../widgets/card/service_card.dart';
 import '../../widgets/responsive/responsive_grid_view.dart';
+import '../../widgets/shared_widgets.dart';
 
 class ServicePage extends ConsumerStatefulWidget {
   const ServicePage({super.key});
@@ -38,10 +39,11 @@ class _ServicePageState extends ConsumerState<ServicePage> {
         color: AppColors.bg,
         child: Column(
           children: [
-            Container(
+            ClipRect(child: Container(
               width: double.infinity,
               padding: EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: isMobile ? 60 : 100),
               child: Stack(
+                clipBehavior: Clip.none,
                 children: [
                   Positioned(top: -60, right: -40, child: const GlowBlob(size: 280, color: AppColors.tealGlow)),
                   Column(
@@ -65,7 +67,7 @@ class _ServicePageState extends ConsumerState<ServicePage> {
                   ),
                 ],
               ),
-            ),
+            )),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: 60),
               child: state.isLoading
@@ -81,6 +83,7 @@ class _ServicePageState extends ConsumerState<ServicePage> {
                           shrinkWrap: true,
                           physics: const NeverScrollableScrollPhysics(),
                           items: state.services,
+                          itemHeight: 350,
                           itemBuilder: (context, service, index) => ScrollReveal(
                             delay: Duration(milliseconds: index * kStaggerStepMs),
                             child: ServiceCard(service: service),
@@ -99,16 +102,7 @@ class _ServicePageState extends ConsumerState<ServicePage> {
                   const SizedBox(height: 12),
                   Text('Parlons de vos besoins et obtenez un devis gratuit sous 48h.', style: AppText.body),
                   const SizedBox(height: 24),
-                  ElevatedButton(
-                    onPressed: () => context.go('/contact'),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.gold,
-                      foregroundColor: AppColors.bg,
-                      padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                    ),
-                    child: const Text('Demander un devis', style: TextStyle(fontWeight: FontWeight.w700)),
-                  ),
+                  GoldButton(label: 'Demander un devis', onPressed: () => context.go('/contact')),
                 ],
               ),
             ),

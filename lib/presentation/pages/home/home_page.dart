@@ -11,6 +11,7 @@ import '../../providers/projet_provider.dart';
 import '../../providers/service_provider.dart';
 import '../../widgets/card/projet_card.dart';
 import '../../widgets/card/service_card.dart';
+import '../../widgets/shared_widgets.dart';
 import '../../widgets/testimonial_section.dart';
 import '../projets/projet_detail_dialog.dart';
 import '../../../data/models/projet_model.dart';
@@ -66,15 +67,20 @@ class _HomePageState extends ConsumerState<HomePage> {
   }
 
   Widget _buildHero(bool isMobile, double horizontalPadding) {
-    return Container(
+    // ClipRect au niveau de la section : les halos débordent librement du
+    // contenu mais restent coupés aux bords de l'écran (et non en rectangle).
+    return ClipRect(child: Container(
       width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: isMobile ? 80 : 140),
       color: AppColors.bg,
       child: Stack(
+        clipBehavior: Clip.none,
         children: [
           Positioned(top: -80, right: -60, child: const GlowBlob(size: 340, color: AppColors.tealGlow)),
           Positioned(bottom: -100, left: -80, child: const GlowBlob(size: 300, color: AppColors.tealDeep)),
-          Column(
+          SizedBox(
+            width: double.infinity,
+            child: Column(
             crossAxisAlignment: isMobile ? CrossAxisAlignment.start : CrossAxisAlignment.center,
             children: [
               Container(
@@ -104,37 +110,20 @@ class _HomePageState extends ConsumerState<HomePage> {
               ),
               const SizedBox(height: 36),
               Wrap(
-                alignment: WrapAlignment.center,
+                alignment: isMobile ? WrapAlignment.start : WrapAlignment.center,
                 spacing: 16,
                 runSpacing: 16,
                 children: [
-                  ElevatedButton(
-                    onPressed: () => context.go('/projets'),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.gold,
-                      foregroundColor: AppColors.bg,
-                      padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 18),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                    ),
-                    child: const Text('Découvrir nos projets', style: TextStyle(fontWeight: FontWeight.w700)),
-                  ),
-                  OutlinedButton(
-                    onPressed: () => context.go('/contact'),
-                    style: OutlinedButton.styleFrom(
-                      foregroundColor: AppColors.white,
-                      side: const BorderSide(color: AppColors.glassBorder),
-                      padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 18),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                    ),
-                    child: const Text('Demander un devis', style: TextStyle(fontWeight: FontWeight.w700)),
-                  ),
+                  GoldButton(label: 'Découvrir nos projets', onPressed: () => context.go('/projets')),
+                  GhostButton(label: 'Demander un devis', onPressed: () => context.go('/contact')),
                 ],
               ),
             ],
           ),
+          ),
         ],
       ),
-    );
+    ));
   }
 
   Widget _buildExpertise(bool isMobile, double horizontalPadding) {
@@ -180,12 +169,11 @@ class _HomePageState extends ConsumerState<HomePage> {
       padding: EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: 70),
       child: Column(
         children: [
-          Text('CE QUE NOUS FAISONS', style: AppText.eyebrow),
-          const SizedBox(height: 12),
-          Text('Nos services clés', style: AppText.h2.copyWith(fontSize: 28)),
+          const SectionHeader(eyebrow: 'CE QUE NOUS FAISONS', title: 'Nos services clés'),
           const SizedBox(height: 40),
           LayoutBuilder(
             builder: (context, constraints) => Wrap(
+              alignment: WrapAlignment.center,
               spacing: 20,
               runSpacing: 20,
               children: services.asMap().entries.map((entry) {
@@ -216,12 +204,11 @@ class _HomePageState extends ConsumerState<HomePage> {
       padding: EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: 70),
       child: Column(
         children: [
-          Text('NOTRE PORTFOLIO', style: AppText.eyebrow),
-          const SizedBox(height: 12),
-          Text('Projets récents', style: AppText.h2.copyWith(fontSize: 28)),
+          const SectionHeader(eyebrow: 'NOTRE PORTFOLIO', title: 'Projets récents'),
           const SizedBox(height: 40),
           LayoutBuilder(
             builder: (context, constraints) => Wrap(
+              alignment: WrapAlignment.center,
               spacing: 20,
               runSpacing: 20,
               children: projets.asMap().entries.map((entry) {
@@ -273,16 +260,7 @@ class _HomePageState extends ConsumerState<HomePage> {
             style: AppText.body,
           ),
           const SizedBox(height: 28),
-          ElevatedButton(
-            onPressed: () => context.go('/contact'),
-            style: ElevatedButton.styleFrom(
-              backgroundColor: AppColors.gold,
-              foregroundColor: AppColors.bg,
-              padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 18),
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-            ),
-            child: const Text('Contactez-nous', style: TextStyle(fontWeight: FontWeight.w700)),
-          ),
+          GoldButton(label: 'Contactez-nous', onPressed: () => context.go('/contact')),
         ],
       ),
     ).animate().fadeIn(duration: 400.ms);

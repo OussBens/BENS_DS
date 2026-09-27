@@ -130,9 +130,6 @@ class _MyAppState extends ConsumerState<MyApp> {
       );
     }
 
-    // Gestion du RTL pour l'arabe
-    final isArabic = context.locale.languageCode == 'ar';
-
     return MaterialApp.router(
       title: 'app_title'.tr(),
       theme: AppTheme.lightTheme,

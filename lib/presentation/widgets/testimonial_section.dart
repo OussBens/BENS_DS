@@ -1,5 +1,6 @@
 // lib/presentation/widgets/testimonial_section.dart
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/theme/app_colors.dart';
@@ -51,7 +52,7 @@ class _TestimonialSectionState extends ConsumerState<TestimonialSection> {
         : 'Des expériences réelles vécues par nos clients BENS DIGITAL SOLUTIONS';
 
     final screenWidth = MediaQuery.of(context).size.width;
-    final isMobile = screenWidth < 600;
+    final isMobile = screenWidth < 700;
     final horizontalPadding =
         isMobile ? 16.0 : (screenWidth < 1200 ? 40.0 : 80.0);
     final titleFontSize = isMobile ? 28.0 : 36.0;
@@ -98,70 +99,56 @@ class _TestimonialSectionState extends ConsumerState<TestimonialSection> {
                   Text(
                     titleText,
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontFamily: 'Inter',
-                      fontSize: titleFontSize,
-                      fontWeight: FontWeight.bold,
-                      color: AppColors.white,
-                    ),
+                    style: AppText.h2.copyWith(fontSize: titleFontSize),
                   ),
                   const SizedBox(height: 16),
                   Text(
                     subtitleText,
                     textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: isMobile ? 14 : 16,
-                      color: AppColors.muted,
-                    ),
+                    style: AppText.body.copyWith(fontSize: isMobile ? 14 : 16),
                   ),
                 ],
               ),
             ),
           ),
           const SizedBox(height: 48),
-          SizedBox(
-            height: 280,
-            child: LayoutBuilder(
-              builder: (context, constraints) {
-                final totalWidth =
-                    testimonials.length * cardWidth + testimonials.length * 20;
-                final cards = testimonials.asMap().entries.map((entry) {
-                  return Padding(
-                    padding: const EdgeInsets.only(right: 20),
-                    child: ScrollReveal(
-                      delay: Duration(milliseconds: entry.key * kStaggerStepMs),
-                      child: TemoinCard(
-                        temoin: entry.value,
-                        width: cardWidth,
-                      ),
-                    ),
+          // Desktop / tablette : grille centrée (comme un site web).
+          // Mobile : carrousel horizontal glissable au doigt ou à la souris.
+          if (!isMobile)
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
+              child: Wrap(
+                alignment: WrapAlignment.center,
+                spacing: 20,
+                runSpacing: 24,
+                children: testimonials.asMap().entries.map((entry) {
+                  return ScrollReveal(
+                    delay: Duration(milliseconds: entry.key * kStaggerStepMs),
+                    child: TemoinCard(temoin: entry.value, width: cardWidth, height: 280),
                   );
-                }).toList();
-
-                // Quand les avis tiennent dans la largeur disponible, on les
-                // centre plutôt que de les laisser collés à gauche dans une
-                // ListView scrollable qui n'a pas besoin de scroller.
-                if (totalWidth <= constraints.maxWidth) {
-                  return Center(
-                    child: SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      physics: const NeverScrollableScrollPhysics(),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: cards,
-                      ),
-                    ),
-                  );
-                }
-
-                return ListView(
-                  padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
+                }).toList(),
+              ),
+            )
+          else
+            SizedBox(
+              height: 300,
+              child: ScrollConfiguration(
+                behavior: ScrollConfiguration.of(context).copyWith(
+                  dragDevices: PointerDeviceKind.values.toSet(),
+                ),
+                child: ListView.separated(
+                  padding: EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: 10),
                   scrollDirection: Axis.horizontal,
                   physics: const BouncingScrollPhysics(),
-                  children: cards,
-                );
-              },
+                  itemCount: testimonials.length,
+                  separatorBuilder: (_, __) => const SizedBox(width: 16),
+                  itemBuilder: (context, index) => ScrollReveal(
+                    delay: Duration(milliseconds: index * kStaggerStepMs),
+                    child: TemoinCard(temoin: testimonials[index], width: cardWidth, height: 280),
+                  ),
+                ),
+              ),
             ),
-          ),
         ],
       ),
     );

@@ -169,6 +169,9 @@ class _MainLayoutState extends ConsumerState<MainLayout> {
                 elevation: 0,
                 centerTitle: false,
                 automaticallyImplyLeading: false,
+                // Empêche l'AppBar d'ajouter son propre bouton d'endDrawer
+                // (doublon avec l'icône menu du flexibleSpace).
+                actions: const [SizedBox.shrink()],
                 flexibleSpace: FlexibleSpaceBar(
                   background: _buildGlassAppBarBackground(
                     child: Padding(
@@ -338,7 +341,9 @@ class _MainLayoutState extends ConsumerState<MainLayout> {
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 56),
+            // Pas de retrait supplémentaire en mobile : le padding du
+            // Container suffit et évite un footer trop étroit.
+            padding: EdgeInsets.symmetric(horizontal: ResponsiveHelper.isMobile(context) ? 0 : 56),
             child: columns == 2
                 ? Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
