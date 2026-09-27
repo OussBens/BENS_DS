@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="$FLUTTER_BASE_HREF">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A sell car sit web.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="chm_web">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>chm_web</title>
+  <link rel="manifest" href="manifest.json">
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: #0A0A0A;
+    }
+
+    #chm-splash {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 50% 42%, #1A1A1A 0%, #0A0A0A 55%, #000000 100%);
+      transition: opacity 0.45s ease;
+    }
+
+    #chm-splash.chm-splash-hide {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    #chm-splash img {
+      width: 96px;
+      height: 96px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 28px rgba(233, 20, 25, 0.5));
+      animation: chm-pulse 1.4s ease-in-out infinite;
+    }
+
+    #chm-splash .chm-spinner {
+      width: 38px;
+      height: 38px;
+      margin-top: 36px;
+      border-radius: 50%;
+      border: 3px solid rgba(255, 255, 255, 0.12);
+      border-top-color: #E91419;
+      animation: chm-spin 0.9s linear infinite;
+    }
+
+    @keyframes chm-pulse {
+      0%, 100% { transform: scale(0.94); }
+      50% { transform: scale(1.05); }
+    }
+
+    @keyframes chm-spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div id="chm-splash">
+    <img src="icons/Icon-192.png" alt="CHM Automotive" />
+    <div class="chm-spinner"></div>
+  </div>
+  <script>
+    window.addEventListener('flutter-first-frame', function () {
+      var splash = document.getElementById('chm-splash');
+      if (!splash) return;
+      splash.classList.add('chm-splash-hide');
+      setTimeout(function () { splash.remove(); }, 500);
+    });
+  </script>
+
+  <!--
+    You can customize the "flutter_bootstrap.js" script.
+    This is useful to provide a custom configuration to the Flutter loader
+    or to give the user feedback during the initialization process.
+
+    For more details:
+    * https://docs.flutter.dev/platform-integration/web/initialization
+  -->
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>

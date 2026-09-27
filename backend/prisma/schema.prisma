@@ -1,0 +1,98 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  name      String?
+  role      Role     @default(USER)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Project {
+  id           Int      @id @default(autoincrement())
+  title        String
+  description  String   @db.Text
+  category     String
+  imageUrl     String?
+  gallery      String[]
+  technologies String[]
+  clientName   String?
+  projectUrl   String?
+  isFeatured   Boolean  @default(false)
+  isPublished  Boolean  @default(true)
+  order        Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Service {
+  id           Int      @id @default(autoincrement())
+  title        String
+  description  String   @db.Text
+  icon         String
+  technologies String[]
+  priceFrom    Decimal? @db.Decimal(10, 2)
+  order        Int      @default(0)
+  isPublished  Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Testimonial {
+  id            Int      @id @default(autoincrement())
+  nomClient     String
+  titre         String?
+  modeleVoiture String?
+  contenu       String   @db.Text
+  note          Int
+  photos        String[]
+  video         String?
+  date          DateTime
+  isActive      Boolean  @default(true)
+  creePar       String
+  creeLe        DateTime @default(now())
+  modifiePar    String?
+  modifieLe     DateTime?
+}
+
+model ContactMessage {
+  id          Int           @id @default(autoincrement())
+  name        String
+  email       String
+  phone       String?
+  subject     String
+  message     String        @db.Text
+  status      MessageStatus @default(NEW)
+  adminNote   String?
+  createdAt   DateTime      @default(now())
+  respondedAt DateTime?
+}
+
+model CompanyInfo {
+  id        Int      @id @default(autoincrement())
+  telephone String
+  email     String
+  adresse   String
+  horraire  String
+  updatedAt DateTime @updatedAt
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+enum MessageStatus {
+  NEW
+  READ
+  RESPONDED
+}

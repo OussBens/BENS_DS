@@ -1,0 +1,456 @@
+{
+  "cars": [
+    {
+      "id": "1",
+      "marque": "BMW",
+      "model": "M3 F80",
+      "carrosserie": "Berline",
+      "prix": 19000,
+      "isVisible": true,
+      "isPromotion": true,
+      "creePar": "admin@chm.com",
+      "creeLe": "2024-01-15T10:00:00Z",
+      "modifiePar": null,
+      "modifieLe": null,
+      "observation": "Voiture en excellent état, entretien suivi chez concessionnaire",
+      "couleurs": [
+        { "id": "1", "couleur": "Bleu Alpine" },
+        { "id": "1", "couleur": "Noir Saphir" },
+        { "id": "1", "couleur": "Blanc Alpine" }
+      ],
+      "moteurs": [
+        { "id": "1", "moteur": "3.0L TwinPower Turbo 450ch" },
+        { "id": "1", "moteur": "3.0L Biturbo 510ch" }
+      ],
+      "transmissions": [
+        { "id": "1", "transmission": "Manuelle" },
+        { "id": "1", "transmission": "Automatique" }
+      ],
+      "carburants": [
+        { "id": "1", "carburant": "Essence", "etat": "Très bon état" }
+      ],
+      "photos": [
+        { "id": "1", "photo": "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=500", "isPrincipal": true, "ordre": 1 },
+        { "id": "1", "photo": "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=500", "isPrincipal": false, "ordre": 2 },
+        { "id": "1", "photo": "https://images.unsplash.com/photo-1567808291548-fc3b04d11a47?w=500", "isPrincipal": false, "ordre": 3 },
+        { "id": "1", "photo": "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=500", "isPrincipal": false, "ordre": 4 }
+      ]
+    },
+    {
+      "id": "2",
+      "marque": "Mercedes-Benz",
+      "model": "S Class AMG",
+      "carrosserie": "Berline",
+      "prix": 129000,
+      "isVisible": true,
+      "isPromotion": false,
+      "creePar": "admin@chm.com",
+      "creeLe": "2024-01-20T10:00:00Z",
+      "modifiePar": null,
+      "modifieLe": null,
+      "observation": "Voiture de luxe avec finition exclusive",
+      "couleurs": [
+        { "id": "2", "couleur": "Noir Obsidien" },
+        { "id": "2", "couleur": "Blanc Nacré" },
+        { "id": "2", "couleur": "Gris Nardo" }
+      ],
+      "moteurs": [
+        { "id": "2", "moteur": "4.0L V8 Biturbo 612ch" },
+        { "id": "2", "moteur": "6.0L V12 630ch" }
+      ],
+      "transmissions": [
+        { "id": "2", "transmission": "Automatique" },
+        { "id": "2", "transmission": "Manuelle" }
+      ],
+      "carburants": [
+        { "id": "2", "carburant": "Essence", "etat": "Neuf" }
+      ],
+      "photos": [
+        { "id": "2", "photo": "https://images.unsplash.com/photo-1626668893631-9f5b1b5d6a7b?w=500", "isPrincipal": true, "ordre": 1 },
+        { "id": "2", "photo": "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=500", "isPrincipal": false, "ordre": 2 },
+        { "id": "2", "photo": "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=500", "isPrincipal": false, "ordre": 3 }
+      ]
+    },
+    {
+      "id": "3",
+      "marque": "Audi",
+      "model": "R8 V10 Plus",
+      "carrosserie": "Coupé",
+      "prix": 165000,
+      "isVisible": true,
+      "isPromotion": true,
+      "creePar": "admin@chm.com",
+      "creeLe": "2024-01-25T10:00:00Z",
+      "modifiePar": null,
+      "modifieLe": null,
+      "observation": "Supercar avec moteur V10 atmosphérique",
+      "couleurs": [
+        { "id": "3", "couleur": "Rouge Ascari" },
+        { "id": "3", "couleur": "Gris Suzuka" },
+        { "id": "3", "couleur": "Jaune Vegas" }
+      ],
+      "moteurs": [
+        { "id": "3", "moteur": "5.2L V10 FSI 610ch" },
+        { "id": "3", "moteur": "5.2L V10 Performance 640ch" }
+      ],
+      "transmissions": [
+        { "id": "3", "transmission": "Manuelle" }
+      ],
+      "carburants": [
+        { "id": "3", "carburant": "Essence", "etat": "Très bon état" }
+      ],
+      "photos": [
+        { "id": "3", "photo": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=500", "isPrincipal": true, "ordre": 1 },
+        { "id": "3", "photo": "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?w=500", "isPrincipal": false, "ordre": 2 },
+        { "id": "3", "photo": "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=500", "isPrincipal": false, "ordre": 3 }
+      ]
+    },
+    {
+      "id": "4",
+      "marque": "Porsche",
+      "model": "911 Turbo S",
+      "carrosserie": "Coupé",
+      "prix": 225000,
+      "isVisible": true,
+      "isPromotion": false,
+      "creePar": "admin@chm.com",
+      "creeLe": "2024-02-01T10:00:00Z",
+      "modifiePar": null,
+      "modifieLe": null,
+      "observation": "La référence des sportives",
+      "couleurs": [
+        { "id": "4", "couleur": "Gris Crayon" },
+        { "id": "4", "couleur": "Rouge Carmin" },
+        { "id": "4", "couleur": "Bleu Miami" }
+      ],
+      "moteurs": [
+        { "id": "4", "moteur": "3.8L Flat-6 Biturbo 650ch" }
+      ],
+      "transmissions": [
+        { "id": "4", "transmission": "Automatique" }
+      ],
+      "carburants": [
+        { "id": "4", "carburant": "Essence", "etat": "Neuf" }
+      ],
+      "photos": [
+        { "id": "4", "photo": "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?w=500", "isPrincipal": true, "ordre": 1 },
+        { "id": "4", "photo": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=500", "isPrincipal": false, "ordre": 2 },
+        { "id": "4", "photo": "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=500", "isPrincipal": false, "ordre": 3 }
+      ]
+    },
+    {
+      "id": "5",
+      "marque": "Land Rover",
+      "model": "Range Rover Sport",
+      "carrosserie": "SUV",
+      "prix": 89000,
+      "isVisible": true,
+      "isPromotion": true,
+      "creePar": "admin@chm.com",
+      "creeLe": "2024-02-05T10:00:00Z",
+      "modifiePar": null,
+      "modifieLe": null,
+      "observation": "SUV de luxe tout-terrain",
+      "couleurs": [
+        { "id": "5", "couleur": "Vert Boréal" },
+        { "id": "5", "couleur": "Noir Santorin" },
+        { "id": "5", "couleur": "Blanc Fuji" }
+      ],
+      "moteurs": [
+        { "id": "5", "moteur": "3.0L Diesel 350ch" },
+        { "id": "5", "moteur": "4.4L V8 525ch" }
+      ],
+      "transmissions": [
+        { "id": "5", "transmission": "Automatique" }
+      ],
+      "carburants": [
+        { "id": "5", "carburant": "Diesel", "etat": "Très bon état" }
+      ],
+      "photos": [
+        { "id": "5", "photo": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=500", "isPrincipal": true, "ordre": 1 },
+        { "id": "5", "photo": "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=500", "isPrincipal": false, "ordre": 2 },
+        { "id": "5", "photo": "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=500", "isPrincipal": false, "ordre": 3 }
+      ]
+    },
+    {
+      "id": "6",
+      "marque": "Tesla",
+      "model": "Model S Plaid",
+      "carrosserie": "Berline",
+      "prix": 95000,
+      "isVisible": true,
+      "isPromotion": false,
+      "creePar": "admin@chm.com",
+      "creeLe": "2024-02-10T10:00:00Z",
+      "modifiePar": null,
+      "modifieLe": null,
+      "observation": "Berline électrique ultra-performante",
+      "couleurs": [
+        { "id": "6", "couleur": "Blanc Perle" },
+        { "id": "6", "couleur": "Noir Uni" },
+        { "id": "6", "couleur": "Rouge Multicouche" }
+      ],
+      "moteurs": [
+        { "id": "6", "moteur": "Triple moteur électrique 1020ch" }
+      ],
+      "transmissions": [
+        { "id": "6", "transmission": "Automatique" }
+      ],
+      "carburants": [
+        { "id": "6", "carburant": "Électrique", "etat": "Neuf" }
+      ],
+      "photos": [
+        { "id": "6", "photo": "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=500", "isPrincipal": true, "ordre": 1 },
+        { "id": "6", "photo": "https://images.unsplash.com/photo-1626668893631-9f5b1b5d6a7b?w=500", "isPrincipal": false, "ordre": 2 },
+        { "id": "6", "photo": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=500", "isPrincipal": false, "ordre": 3 }
+      ]
+    },
+    {
+      "id": "7",
+      "marque": "Ferrari",
+      "model": "F8 Tributo",
+      "carrosserie": "Coupé",
+      "prix": 280000,
+      "isVisible": true,
+      "isPromotion": false,
+      "creePar": "admin@chm.com",
+      "creeLe": "2024-02-15T10:00:00Z",
+      "modifiePar": null,
+      "modifieLe": null,
+      "observation": "Le cheval cabré dans sa plus belle expression",
+      "couleurs": [
+        { "id": "7", "couleur": "Rouge Corsa" },
+        { "id": "7", "couleur": "Jaune Modena" },
+        { "id": "7", "couleur": "Bleu Tour de France" }
+      ],
+      "moteurs": [
+        { "id": "7", "moteur": "3.9L V8 Biturbo 720ch" }
+      ],
+      "transmissions": [
+        { "id": "7", "transmission": "Manuelle" }
+      ],
+      "carburants": [
+        { "id": "7", "carburant": "Essence", "etat": "Très bon état" }
+      ],
+      "photos": [
+        { "id": "7", "photo": "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=500", "isPrincipal": true, "ordre": 1 },
+        { "id": "7", "photo": "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=500", "isPrincipal": false, "ordre": 2 },
+        { "id": "7", "photo": "https://images.unsplash.com/photo-1567808291548-fc3b04d11a47?w=500", "isPrincipal": false, "ordre": 3 }
+      ]
+    },
+    {
+      "id": "8",
+      "marque": "Lamborghini",
+      "model": "Huracan EVO",
+      "carrosserie": "Coupé",
+      "prix": 245000,
+      "isVisible": true,
+      "isPromotion": true,
+      "creePar": "admin@chm.com",
+      "creeLe": "2024-02-20T10:00:00Z",
+      "modifiePar": null,
+      "modifieLe": null,
+      "observation": "Le taureau italien",
+      "couleurs": [
+        { "id": "8", "couleur": "Jaune Giallo" },
+        { "id": "8", "couleur": "Vert Mantis" },
+        { "id": "8", "couleur": "Bleu Cepheus" }
+      ],
+      "moteurs": [
+        { "id": "8", "moteur": "5.2L V10 640ch" }
+      ],
+      "transmissions": [
+        { "id": "8", "transmission": "Manuelle" }
+      ],
+      "carburants": [
+        { "id": "8", "carburant": "Essence", "etat": "Très bon état" }
+      ],
+      "photos": [
+        { "id": "8", "photo": "https://images.unsplash.com/photo-1621135802920-133df287f89c?w=500", "isPrincipal": true, "ordre": 1 },
+        { "id": "8", "photo": "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=500", "isPrincipal": false, "ordre": 2 },
+        { "id": "8", "photo": "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?w=500", "isPrincipal": false, "ordre": 3 }
+      ]
+    },
+    {
+      "id": "9",
+      "marque": "Volvo",
+      "model": "XC90 Recharge",
+      "carrosserie": "SUV",
+      "prix": 72000,
+      "isVisible": true,
+      "isPromotion": false,
+      "creePar": "admin@chm.com",
+      "creeLe": "2024-02-25T10:00:00Z",
+      "modifiePar": null,
+      "modifieLe": null,
+      "observation": "SUV familial hybride rechargeable",
+      "couleurs": [
+        { "id": "9", "couleur": "Gris Savon" },
+        { "id": "9", "couleur": "Bleu Fjord" },
+        { "id": "9", "couleur": "Noir Onyx" }
+      ],
+      "moteurs": [
+        { "id": "9", "moteur": "2.0L T8 Twin Engine 455ch" }
+      ],
+      "transmissions": [
+        { "id": "9", "transmission": "Automatique" }
+      ],
+      "carburants": [
+        { "id": "9", "carburant": "Hybride", "etat": "Neuf" }
+      ],
+      "photos": [
+        { "id": "9", "photo": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=500", "isPrincipal": true, "ordre": 1 },
+        { "id": "9", "photo": "https://images.unsplash.com/photo-1626668893631-9f5b1b5d6a7b?w=500", "isPrincipal": false, "ordre": 2 },
+        { "id": "9", "photo": "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=500", "isPrincipal": false, "ordre": 3 }
+      ]
+    },
+    {
+      "id": "10",
+      "marque": "Jaguar",
+      "model": "F-PACE SVR",
+      "carrosserie": "SUV",
+      "prix": 85000,
+      "isVisible": true,
+      "isPromotion": true,
+      "creePar": "admin@chm.com",
+      "creeLe": "2024-03-01T10:00:00Z",
+      "modifiePar": null,
+      "modifieLe": null,
+      "observation": "SUV sportif britannique",
+      "couleurs": [
+        { "id": "10", "couleur": "Bleu British" },
+        { "id": "10", "couleur": "Vert Sherwood" },
+        { "id": "10", "couleur": "Blanc Glacier" }
+      ],
+      "moteurs": [
+        { "id": "10", "moteur": "5.0L V8 Supercharged 550ch" }
+      ],
+      "transmissions": [
+        { "id": "10", "transmission": "Automatique" }
+      ],
+      "carburants": [
+        { "id": "10", "carburant": "Essence", "etat": "Très bon état" }
+      ],
+      "photos": [
+        { "id": "10", "photo": "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=500", "isPrincipal": true, "ordre": 1 },
+        { "id": "10", "photo": "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=500", "isPrincipal": false, "ordre": 2 },
+        { "id": "10", "photo": "https://images.unsplash.com/photo-1567808291548-fc3b04d11a47?w=500", "isPrincipal": false, "ordre": 3 }
+      ]
+    }
+  ]
+,  "users": [
+    {
+      "id": "1",
+      "email": "vip@chm.com",
+      "password": "vip123",
+      "name": "Jean Dupont",
+      "role": "vip",
+      "phone": "+1234567890",
+      "avatarUrl": null
+    },
+    {
+      "id": "2",
+      "email": "admin@chm.com",
+      "password": "admin123",
+      "name": "Admin User",
+      "role": "admin",
+      "phone": "+0987654321",
+      "avatarUrl": null
+    },
+    {
+      "id": "3",
+      "email": "client@test.com",
+      "password": "client123",
+      "name": "Client Normal",
+      "role": "customer",
+      "phone": null,
+      "avatarUrl": null
+    }
+  ],
+  "orders": [
+    {
+      "id": "ORD-001",
+      "userId": "1",
+      "carId": "1",
+      "carName": "BMW M3 F80",
+      "amount": 19000,
+      "status": "shipped",
+      "orderDate": "2024-01-15T10:30:00Z",
+      "estimatedDelivery": "2024-01-25T10:30:00Z",
+      "trackingNumber": "1Z999AA10123456784",
+      "history": [
+        {
+          "status": "pending",
+          "date": "2024-01-15T10:30:00Z",
+          "description": "Commande passée avec succès"
+        },
+        {
+          "status": "processing",
+          "date": "2024-01-16T09:00:00Z",
+          "description": "Commande en cours de traitement"
+        },
+        {
+          "status": "shipped",
+          "date": "2024-01-18T14:20:00Z",
+          "description": "Commande expédiée"
+        }
+      ]
+    },
+    {
+      "id": "ORD-002",
+      "userId": "1",
+      "carId": "2",
+      "carName": "Mercedes-Benz S Class AMG",
+      "amount": 129000,
+      "status": "processing",
+      "orderDate": "2024-01-20T15:45:00Z",
+      "estimatedDelivery": "2024-02-05T15:45:00Z",
+      "trackingNumber": "1Z888BB20234567895",
+      "history": [
+        {
+          "status": "pending",
+          "date": "2024-01-20T15:45:00Z",
+          "description": "Commande passée avec succès"
+        },
+        {
+          "status": "processing",
+          "date": "2024-01-21T11:30:00Z",
+          "description": "Commande en cours de traitement"
+        }
+      ]
+    },
+    {
+      "id": "ORD-003",
+      "userId": "1",
+      "carId": "4",
+      "carName": "Porsche 911 Turbo S",
+      "amount": 225000,
+      "status": "delivered",
+      "orderDate": "2024-01-05T09:15:00Z",
+      "estimatedDelivery": "2024-01-15T09:15:00Z",
+      "trackingNumber": "1Z777CC30345678906",
+      "history": [
+        {
+          "status": "pending",
+          "date": "2024-01-05T09:15:00Z",
+          "description": "Commande passée avec succès"
+        },
+        {
+          "status": "processing",
+          "date": "2024-01-06T10:00:00Z",
+          "description": "Commande en cours de traitement"
+        },
+        {
+          "status": "shipped",
+          "date": "2024-01-08T08:30:00Z",
+          "description": "Commande expédiée"
+        },
+        {
+          "status": "delivered",
+          "date": "2024-01-14T14:20:00Z",
+          "description": "Commande livrée avec succès"
+        }
+      ]
+    }
+  ]
+}
