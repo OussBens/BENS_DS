@@ -39,7 +39,7 @@
       background: #050F0E;
     }
 
-    #chm-splash {
+    #bens-splash {
       position: fixed;
       inset: 0;
       z-index: 9999;
@@ -51,49 +51,49 @@
       transition: opacity 0.45s ease;
     }
 
-    #chm-splash.chm-splash-hide {
+    #bens-splash.bens-splash-hide {
       opacity: 0;
       pointer-events: none;
     }
 
-    #chm-splash img {
+    #bens-splash img {
       width: 200px;
       height: 97px;
       object-fit: contain;
       filter: drop-shadow(0 0 28px rgba(34, 230, 200, 0.45));
-      animation: chm-pulse 1.4s ease-in-out infinite;
+      animation: bens-pulse 1.4s ease-in-out infinite;
     }
 
-    #chm-splash .chm-spinner {
+    #bens-splash .bens-spinner {
       width: 38px;
       height: 38px;
       margin-top: 36px;
       border-radius: 50%;
       border: 3px solid rgba(255, 255, 255, 0.12);
       border-top-color: #FFD400;
-      animation: chm-spin 0.9s linear infinite;
+      animation: bens-spin 0.9s linear infinite;
     }
 
-    @keyframes chm-pulse {
+    @keyframes bens-pulse {
       0%, 100% { transform: scale(0.94); }
       50% { transform: scale(1.05); }
     }
 
-    @keyframes chm-spin {
+    @keyframes bens-spin {
       to { transform: rotate(360deg); }
     }
   </style>
 </head>
 <body>
-  <div id="chm-splash">
+  <div id="bens-splash">
     <img src="icons/splash-logo.png" alt="BENS Digital Solutions" />
-    <div class="chm-spinner"></div>
+    <div class="bens-spinner"></div>
   </div>
   <script>
     window.addEventListener('flutter-first-frame', function () {
-      var splash = document.getElementById('chm-splash');
+      var splash = document.getElementById('bens-splash');
       if (!splash) return;
-      splash.classList.add('chm-splash-hide');
+      splash.classList.add('bens-splash-hide');
       setTimeout(function () { splash.remove(); }, 500);
     });
   </script>

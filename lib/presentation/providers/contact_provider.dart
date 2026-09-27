@@ -1,5 +1,5 @@
-import 'package:chm_web/data/datasources/contact_api.dart';
-import 'package:chm_web/data/models/contact_message_model.dart';
+import 'package:bens_ds/data/datasources/contact_api.dart';
+import 'package:bens_ds/data/models/contact_message_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final contactProvider = StateNotifierProvider<ContactNotifier, ContactState>((ref) => ContactNotifier());

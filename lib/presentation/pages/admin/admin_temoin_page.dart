@@ -1,7 +1,7 @@
 // lib/presentation/pages/admin/admin_temoin_page.dart
-import 'package:chm_web/core/constants/app_constants.dart';
-import 'package:chm_web/data/models/temoin_model.dart';
-import 'package:chm_web/presentation/pages/admin/add_temoin_dialog.dart';
+import 'package:bens_ds/core/constants/app_constants.dart';
+import 'package:bens_ds/data/models/temoin_model.dart';
+import 'package:bens_ds/presentation/pages/admin/add_temoin_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/utils/responsive_helper.dart';

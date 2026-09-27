@@ -1,5 +1,5 @@
-import 'package:chm_web/data/datasources/projet_api.dart';
-import 'package:chm_web/data/models/projet_model.dart';
+import 'package:bens_ds/data/datasources/projet_api.dart';
+import 'package:bens_ds/data/models/projet_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final projetProvider = StateNotifierProvider<ProjetNotifier, ProjetState>((ref) => ProjetNotifier());

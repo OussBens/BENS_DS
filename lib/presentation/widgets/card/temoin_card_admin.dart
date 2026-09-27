@@ -1,6 +1,6 @@
 // lib/presentation/widgets/card/temoin_card_admin.dart
-import 'package:chm_web/data/models/temoin_model.dart';
-import 'package:chm_web/presentation/pages/admin/temoin_detail.dart';
+import 'package:bens_ds/data/models/temoin_model.dart';
+import 'package:bens_ds/presentation/pages/admin/temoin_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 

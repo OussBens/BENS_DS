@@ -1,17 +1,20 @@
-# chm_web
+# BENS Digital Solutions — site web
 
-A sell car sit web.
+Site vitrine et back-office de **BENS Digital Solutions (BENS DS)**, agence digitale basée en Algérie
+(développement web/mobile, backend, UI/UX, conseil, maintenance) et éditeur d'**AUTODZ**.
 
-## Getting Started
+- `lib/` : application Flutter Web (site public + back-office `/admin`)
+- `backend/` : API NestJS + Prisma
 
-This project is a starting point for a Flutter application.
+## Lancer le site
 
-A few resources to get you started if this is your first Flutter project:
+```bash
+flutter pub get
+flutter run -d chrome
+```
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## Build de production
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+flutter build web
+```

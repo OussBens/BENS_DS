@@ -1,6 +1,6 @@
 import 'dart:convert';
-import 'package:chm_web/core/config.dart';
-import 'package:chm_web/data/models/temoin_model.dart';
+import 'package:bens_ds/core/config.dart';
+import 'package:bens_ds/data/models/temoin_model.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/api_response.dart';

@@ -1,5 +1,5 @@
-import 'package:chm_web/data/datasources/service_api.dart';
-import 'package:chm_web/data/models/service_model.dart';
+import 'package:bens_ds/data/datasources/service_api.dart';
+import 'package:bens_ds/data/models/service_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final serviceProvider = StateNotifierProvider<ServiceNotifier, ServiceState>((ref) => ServiceNotifier());

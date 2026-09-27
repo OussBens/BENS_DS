@@ -1,5 +1,5 @@
-import 'package:chm_web/data/models/temoin_model.dart';
-import 'package:chm_web/presentation/providers/temoin_provider.dart';
+import 'package:bens_ds/data/models/temoin_model.dart';
+import 'package:bens_ds/presentation/providers/temoin_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/config.dart';

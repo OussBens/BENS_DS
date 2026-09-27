@@ -1,5 +1,5 @@
 {
-  "name": "chm-api",
+  "name": "bens-ds-api",
   "version": "1.0.0",
   "scripts": {
     "build": "nest build",

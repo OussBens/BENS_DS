@@ -1,4 +1,4 @@
-name: chm_web
+name: bens_ds
 description: "BENS Digital Solutions - site vitrine et back-office."
 version: 1.0.0+1
 
@@ -45,7 +45,6 @@ flutter:
   assets:
     - assets/images/
     - assets/images/logo/
-    - assets/icons/
     - assets/fonts/
     - assets/traduction/
 
